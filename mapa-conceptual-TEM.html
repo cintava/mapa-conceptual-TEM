@@ -16,6 +16,12 @@
       --border2: rgba(0,0,0,0.18);
       --accent-info-bg: #e6f1fb;
       --accent-info-text: #185fa5;
+      --accent-conn-bg: #fdf3e3;
+      --accent-conn-text: #8a4a00;
+      --accent-sint-bg: #eaf5ee;
+      --accent-sint-text: #1a5c30;
+      --accent-tres-bg: #f0eeff;
+      --accent-tres-text: #4a2e9c;
       --radius-md: 8px;
       --radius-lg: 12px;
     }
@@ -31,6 +37,12 @@
         --border2: rgba(255,255,255,0.18);
         --accent-info-bg: #0c2e4a;
         --accent-info-text: #85b7eb;
+        --accent-conn-bg: #2a1e00;
+        --accent-conn-text: #d4a055;
+        --accent-sint-bg: #0a2216;
+        --accent-sint-text: #6abf87;
+        --accent-tres-bg: #1a1230;
+        --accent-tres-text: #a090e0;
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,20 +61,11 @@
       top: 0;
       z-index: 10;
     }
-    header h1 {
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-    header p {
-      font-size: 13px;
-      color: var(--text2);
-    }
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem;
-    }
+    header h1 { font-size: 18px; font-weight: 500; margin-bottom: 2px; }
+    header p { font-size: 13px; color: var(--text2); }
+    main { max-width: 860px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+    /* ---- CLASE BLOCK ---- */
     .clase-block {
       margin-bottom: 1.75rem;
       border-radius: var(--radius-lg);
@@ -87,6 +90,7 @@
     .c5 .clase-header { border-left: 3px solid #378ADD; }
     .c6 .clase-header { border-left: 3px solid #BA7517; }
 
+    /* ---- TEXTO BLOCK ---- */
     .texto-block { border-bottom: 0.5px solid var(--border); }
     .texto-block:last-child { border-bottom: none; }
 
@@ -106,24 +110,11 @@
     }
     .texto-header:hover { background: var(--bg2); }
     .texto-title { flex: 1; }
-    .texto-author {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--text2);
-      white-space: nowrap;
-    }
-    .chevron {
-      font-size: 10px;
-      color: var(--text3);
-      transition: transform 0.2s;
-      flex-shrink: 0;
-    }
+    .texto-author { font-size: 12px; font-weight: 400; color: var(--text2); white-space: nowrap; }
+    .chevron { font-size: 10px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; }
     details[open] > .texto-header .chevron { transform: rotate(180deg); }
 
-    .texto-body {
-      padding: 0 1.25rem 1.1rem;
-      background: var(--bg);
-    }
+    .texto-body { padding: 0 1.25rem 1.1rem; background: var(--bg); }
 
     .section-label {
       font-size: 11px;
@@ -135,30 +126,22 @@
       margin-bottom: 6px;
     }
 
+    /* ---- CONCEPTOS ---- */
     .conceptos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 8px;
     }
-
     .concepto-card {
       background: var(--bg2);
       border-radius: var(--radius-md);
       border: 0.5px solid var(--border);
       padding: 0.6rem 0.85rem;
     }
-    .concepto-name {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 3px;
-      color: var(--text);
-    }
-    .concepto-desc {
-      font-size: 12px;
-      color: var(--text2);
-      line-height: 1.5;
-    }
+    .concepto-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; color: var(--text); }
+    .concepto-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
 
+    /* ---- PELÍCULA ---- */
     .peli-section { margin-top: 0.85rem; }
     .peli-badge {
       display: inline-block;
@@ -170,26 +153,136 @@
       padding: 2px 9px;
       letter-spacing: 0.03em;
     }
-    .peli-text {
-      font-size: 12.5px;
-      color: var(--text2);
-      line-height: 1.6;
-      margin-top: 5px;
-    }
+    .peli-text { font-size: 12.5px; color: var(--text2); line-height: 1.6; margin-top: 5px; }
 
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--text3);
-      padding: 2rem 0 1rem;
+    /* ---- TRES ALAS (bloque especial dentro de texto 3) ---- */
+    .alas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
     }
+    .ala-card {
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border);
+      padding: 0.7rem 0.85rem;
+    }
+    .ala-card.ala1 { background: #f0eeff; border-color: #c4baf0; }
+    .ala-card.ala2 { background: #fff4e0; border-color: #f0d490; }
+    .ala-card.ala3 { background: #e8f8f0; border-color: #a0d8b8; }
+    @media (prefers-color-scheme: dark) {
+      .ala-card.ala1 { background: #1a1230; border-color: #4a3a7a; }
+      .ala-card.ala2 { background: #1e1600; border-color: #6a5010; }
+      .ala-card.ala3 { background: #0a1e14; border-color: #2a6040; }
+    }
+    .ala-num { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; opacity: 0.55; margin-bottom: 3px; }
+    .ala-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .ala-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+    .ala-items { margin-top: 5px; font-size: 11.5px; color: var(--text3); }
+    .ala-items span { display: block; }
+
+    /* ---- CONEXIONES ENTRE TEXTOS ---- */
+    .conexiones-block {
+      margin-bottom: 1.75rem;
+      border-radius: var(--radius-lg);
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .conexiones-header {
+      padding: 0.7rem 1.25rem;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-conn-text);
+      border-bottom: 0.5px solid var(--border);
+      background: var(--accent-conn-bg);
+      border-left: 3px solid #c47a00;
+    }
+    .conexion-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 0.7rem 1.25rem;
+      border-bottom: 0.5px solid var(--border);
+      font-size: 13px;
+    }
+    .conexion-row:last-child { border-bottom: none; }
+    .conexion-tags { display: flex; gap: 5px; flex-shrink: 0; flex-wrap: wrap; min-width: 160px; }
+    .ctag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--accent-conn-bg);
+      color: var(--accent-conn-text);
+      white-space: nowrap;
+    }
+    .conexion-desc { color: var(--text2); line-height: 1.5; font-size: 12.5px; }
+
+    /* ---- SÍNTESIS POR CLASE ---- */
+    .sintesis-block {
+      background: var(--accent-sint-bg);
+      border: 0.5px solid rgba(0,0,0,0.08);
+      border-top: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      padding: 0.85rem 1.25rem;
+    }
+    .sintesis-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-sint-text);
+      margin-bottom: 6px;
+    }
+    .sintesis-text { font-size: 12.5px; color: var(--text2); line-height: 1.65; }
+
+    /* ---- POSTURA CÁTEDRA ---- */
+    .catedra-block {
+      margin-bottom: 1.75rem;
+      border-radius: var(--radius-lg);
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .catedra-header {
+      padding: 0.7rem 1.25rem;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-tres-text);
+      border-bottom: 0.5px solid var(--border);
+      background: var(--accent-tres-bg);
+      border-left: 3px solid #7060cc;
+    }
+    .catedra-body { padding: 0.85rem 1.25rem; }
+    .catedra-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 8px;
+    }
+    .catedra-item {
+      background: var(--bg2);
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border);
+      padding: 0.65rem 0.9rem;
+    }
+    .catedra-num { font-size: 10px; font-weight: 700; color: var(--accent-tres-text); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+    .catedra-name { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+    .catedra-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+    footer { text-align: center; font-size: 12px; color: var(--text3); padding: 2rem 0 1rem; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Mapa Conceptual — TEM</h1>
-  <p>Textos teóricos y su relación con <em>Romería</em> (Carla Simón, 2022)</p>
+  <p>Textos teóricos, relaciones entre autores y conexión con <em>Romería</em> (Carla Simón, 2022)</p>
 </header>
 
 <main>
@@ -208,16 +301,18 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Reeducarse</div><div class="concepto-desc">Distanciarse de fórmulas de mercado y binarismos (forma/contenido) para integrar sensorialidad y emoción.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Reeducarse</div><div class="concepto-desc">Distanciarse de fórmulas de mercado y binarismos (forma/contenido) para integrar sensorialidad y emoción en la creación.</div></div>
           <div class="concepto-card"><div class="concepto-name">Des-aprender</div><div class="concepto-desc">Proceso de "des-vivir" lo aprendido automáticamente para retornar del concepto intelectual a la imagen potente.</div></div>
           <div class="concepto-card"><div class="concepto-name">Ficciones propias</div><div class="concepto-desc">Relatos basados en hechos personales que adquieren forma ficcional para conmover y generar empatía en los demás.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Imagen tintineante</div><div class="concepto-desc">Chispazo creativo inicial que reclama atención y debe explorarse capa a capa hasta descubrir lo que esconde.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Pluralidad</div><div class="concepto-desc">Condición humana de ser todos diferentes e iguales (Arendt), que permite "hacer de otros" partiendo de uno mismo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Tres caminos creativos</div><div class="concepto-desc">Génesis de la obra: tema/problemática social, trama/secuencia de acciones, o imagen como punto de partida.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Imagen tintineante</div><div class="concepto-desc">Chispazo creativo inicial que reclama atención y debe explorarse capa a capa hasta descubrir lo que esconde debajo de lo que muestra.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Pluralidad</div><div class="concepto-desc">Condición humana de ser todos diferentes e iguales (Arendt); permite "hacer de otros" partiendo de uno mismo.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Tres caminos creativos</div><div class="concepto-desc">Génesis de la obra: (1) tema/problemática social, (2) trama/secuencia de acciones, (3) imagen como punto de partida.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Disponibilidad interior</div><div class="concepto-desc">Actitud del autor de estar abierto a lo inesperado y a los accidentes del rodaje; la realidad prevalece sobre las ideas preconcebidas.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Traducción audiovisual</div><div class="concepto-desc">Proceso de pasar de un lenguaje a otro: del papel a la imagen, del guion al lenguaje escénico, de éste al montaje.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón des-aprende el relato oficial familiar y lo convierte en ficción propia: cartas, fotos y texturas reemplazan la reconstrucción literal. La imagen de sus padres jóvenes es la "imagen tintineante" que pone en marcha toda la película.</div>
+          <div class="peli-text">Simón des-aprende el relato oficial familiar y lo convierte en ficción propia: cartas, fotos y texturas reemplazan la reconstrucción literal. La imagen de sus padres jóvenes es la "imagen tintineante" que pone en marcha la película. No llega a Galicia con un guion cerrado sino con preguntas — eso es la disponibilidad interior de Fellini.</div>
         </div>
       </div>
     </details>
@@ -233,16 +328,18 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Infancia</div><div class="concepto-desc">Condición humana de origen, base y resistencia; no es un adulto en potencia ni se limita a una edad cronológica.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Cronos / Aión / Kairós</div><div class="concepto-desc">Tres temporalidades: tiempo cronológico adulto, tiempo puro del presente infantil y momento trascendente oportuno.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Complejidad</div><div class="concepto-desc">Relación profunda de los "entre" (Morin): las oposiciones se disuelven y los saberes se penetran mutuamente.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Infancia</div><div class="concepto-desc">Condición humana de origen, base y resistencia; no un adulto en potencia ni una etapa biológica, sino una forma de habitar el mundo.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Cronos / Aión / Kairós</div><div class="concepto-desc">Tres temporalidades: tiempo cronológico adulto (Cronos), tiempo del puro presente infantil (Aión), momento trascendente oportuno (Kairós).</div></div>
+          <div class="concepto-card"><div class="concepto-name">Complejidad</div><div class="concepto-desc">Relación profunda de los "entre" (Morin): las oposiciones se disuelven y los saberes se penetran mutuamente sin binarismos.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Epistemología de la infancia</div><div class="concepto-desc">El niño percibe la realidad sin divisiones binarias, desde la sensorialidad absoluta y la operación metafórica pura.</div></div>
           <div class="concepto-card"><div class="concepto-name">Diálogo intergeneracional</div><div class="concepto-desc">Solo posible si el adulto pone en tela de juicio su sistema de creencias y acepta el pensamiento fantástico del niño.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Juego</div><div class="concepto-desc">Actividad decisiva (Winnicott) que crea un espacio transicional donde se construyen realidades alternativas.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Ciudadanía infantil</div><div class="concepto-desc">Participación real del niño en el espacio público; el afecto como dispositivo político más potente de transformación.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Juego (Winnicott)</div><div class="concepto-desc">Crea un espacio transicional donde se construyen realidades alternativas y se superan conflictos; no es entrenamiento para el futuro.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Cuidar emancipando</div><div class="concepto-desc">Paradoja de la infancia: no se puede proteger sin emancipar; el "cuidado" que oculta es en realidad domesticación.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Afecto</div><div class="concepto-desc">Dispositivo político más potente de transformación; debe repartirse como el pan para garantizar protección, libertad y belleza.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Las tías operan en Cronos (versión secuencial cerrada); Marina llega desde el Aión (movida por intensidades del presente). El uso de actores para encarnar a los padres es el "juego" de Winnicott: crear una realidad alternativa sobre la que trabajar el conflicto.</div>
+          <div class="peli-text">Las tías operan en Cronos (versión secuencial y cerrada de la historia familiar). Marina llega desde el Aión: se mueve por intensidades del presente, no por lógica cronológica. La romería misma es un Kairós — momento colectivo único e irrepetible. El uso de actores para encarnar a los padres es el "juego" de Winnicott: crear una realidad alternativa sobre la que trabajar el conflicto.</div>
         </div>
       </div>
     </details>
@@ -256,21 +353,61 @@
         <span class="chevron">▼</span>
       </summary>
       <div class="texto-body">
-        <div class="section-label">Conceptos clave</div>
+
+        <div class="section-label">Las tres alas del sentido — para qué sirven</div>
+        <div class="alas-grid">
+          <div class="ala-card ala1">
+            <div class="ala-num">Ala 1</div>
+            <div class="ala-name">Escenas y ficciones propias</div>
+            <div class="ala-desc">Indagar la subjetividad del creador: ¿desde qué experiencias, juegos, lengua e imaginario personal se crea? No para hacer autobiografía, sino para realizar una <em>alquimia</em> que traslade lo propio a decisiones técnicas concretas.</div>
+            <div class="ala-items">
+              <span>→ Desplazamiento hacia luz, tempo, montaje</span>
+              <span>→ Lo propio ≠ lo vivido (incluye la época, los antepasados, los vínculos)</span>
+            </div>
+          </div>
+          <div class="ala-card ala2">
+            <div class="ala-num">Ala 2</div>
+            <div class="ala-name">Antropología y Cultura</div>
+            <div class="ala-desc">Analizar las marcas culturales desde las que se crea. La Cultura como "gran paraguas" del sentido: reflexión crítica sobre el sujeto contemporáneo, lo posmoderno y el Poder.</div>
+            <div class="ala-items">
+              <span>→ Matrices culturales como correas de significación</span>
+              <span>→ Mirada histórica e ideológica del discurso</span>
+            </div>
+          </div>
+          <div class="ala-card ala3">
+            <div class="ala-num">Ala 3</div>
+            <div class="ala-name">Lenguaje audiovisual como entramado de sentido</div>
+            <div class="ala-desc">Los 7 elementos primarios (Tiempo, Espacio, Cuerpo, Objeto, Luz, Palabra, Sonido) como "letras del alfabeto". No ilustran una historia: son la historia.</div>
+            <div class="ala-items">
+              <span>→ Construir sentido ≠ asignar significación</span>
+              <span>→ Apelar al "temblor de lo humano"</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-label" style="margin-top:1rem">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Sentido (polisemia)</div><div class="concepto-desc">Abarca dispositivos sensoriales, emociones, orientación discursiva y razón de ser de la existencia humana.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Tres alas del sentido</div><div class="concepto-desc">Escenas/ficciones propias, Antropología/Cultura, y Lenguaje audiovisual como entramado integrado de sentido.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Matrices culturales</div><div class="concepto-desc">Yacimientos de sentido heredados que actúan como correas de significación entre el individuo y la memoria colectiva.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Alquimia / Desplazamiento</div><div class="concepto-desc">Lo propio se traslada a decisiones técnicas (cámara, tempo, montaje), no a catarsis descontrolada.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Mitos</div><div class="concepto-desc">Historias paradigmáticas que explican el comportamiento humano ante preguntas esenciales: vida, muerte, poder.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Literalización</div><div class="concepto-desc">Técnica de llevar metáforas del lenguaje al acto puro o imagen física para potenciar humor, violencia o poética.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Sentido (polisemia)</div><div class="concepto-desc">Abarca dispositivos sensoriales, emociones, orientación discursiva y razón de ser de la existencia humana; no reducible a una sola definición.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Matrices culturales</div><div class="concepto-desc">Yacimientos de sentido heredados; estructuras resistentes donde forma y contenido son inseparables; transmigran entre épocas y medios.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Alquimia / Desplazamiento</div><div class="concepto-desc">Lo propio se traslada a decisiones técnicas (cámara, tempo, montaje). No catarsis descontrolada, sino operación metafórica con fuerza centrífuga.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Juegos como matrices</div><div class="concepto-desc">Andamiajes invisibles del proceso creativo: juego de pistas, juego de la oca, ajedrez con la muerte. Estructuran sin que el espectador lo note.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Mitos</div><div class="concepto-desc">Historias paradigmáticas que explican el comportamiento humano ante preguntas esenciales: vida, muerte, poder, fertilidad. Se reescriben en el cine.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Literalización</div><div class="concepto-desc">Llevar metáforas del lenguaje al acto puro o imagen física: "te voy a cortar en pedacitos" → el dedo enviado en <em>La lección de piano</em>.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Sentido vs. significación</div><div class="concepto-desc">Construir sentido implica hacer participar al cuerpo (sensaciones, emociones). Asignar significación es cerrar el sentido en una referencia conceptual.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Armadores de estructuras invisibles</div><div class="concepto-desc">El creador une piezas separadas "para hacerles decir juntas lo que jamás estuvieron preparadas para decir".</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón activa el mito del viaje del héroe y el juego de pistas como andamiaje invisible. El dolor se traduce en alquimia formal: textura granulada, luz fría de Vigo, silencios. No catarsis, sino desplazamiento técnico.</div>
+          <div class="peli-text">Las tres alas operan simultáneamente en Simón: (1) la Galicia de los 80 que no vivió pero es "suya", trasladada a la textura granulada y la luz fría de Vigo; (2) el contexto histórico de la heroína y el SIDA como yacimiento cultural que descifra; (3) el montaje no lineal, las cartas, los silencios como sistema integrado de sentido. Activa el mito del viaje del héroe y el juego de pistas como andamiaje invisible. Nunca explica: apela al temblor.</div>
         </div>
       </div>
     </details>
+  </div>
+
+  <!-- Síntesis Clase 1 -->
+  <div class="sintesis-block">
+    <div class="sintesis-badge">Síntesis Clase 1 — Los tres textos con Romería</div>
+    <div class="sintesis-text">Romería practica el proceso de reeducación de González (T1): Simón des-aprende el relato oficial familiar para construir sus ficciones propias. La película activa la tensión Cronos/Aión (T2): las tías tienen la historia ordenada cronológicamente, Marina la recupera desde las intensidades del presente y el rito de la romería funciona como Kairós. Las tres alas del sentido (T3) se articulan en una unidad: lo propio como alquimia técnica (luz, silencio, textura), el contexto histórico de la Galicia de los 80 como yacimiento cultural, y los siete elementos primarios como sistema integrado. La película no explica qué significa la historia de sus padres — apela al temblor de lo humano. Eso es construir sentido.</div>
   </div>
 </div>
 
@@ -288,16 +425,18 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">7 significantes</div><div class="concepto-desc">Espacio, Tiempo, Luz, Sonido, Objeto, Palabra y Cuerpo: materiales integrados para construir sentido en escena.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Espectador partícipe</div><div class="concepto-desc">Sujeto activo que conecta piezas y arma el rompecabezas del film por sí mismo, disfrutando lo no dicho.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Metáfora / Desplazamiento</div><div class="concepto-desc">Acción u objeto que en un contexto opera cargado de sentido. Evita la literalidad trasladando la emoción a otro elemento.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Fuera de campo</div><div class="concepto-desc">Espacio no visible donde a menudo ocurre lo más importante, generando tensión e inminencia (Martel).</div></div>
-          <div class="concepto-card"><div class="concepto-name">Objeto metaforizador</div><div class="concepto-desc">Elemento material que gana capas de sentido en cada aparición y amplifica el campo emocional del relato.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Subtexto</div><div class="concepto-desc">Lo no dicho pero sugerido en los entresijos de las palabras; lo que el personaje piensa pero no expresa.</div></div>
+          <div class="concepto-card"><div class="concepto-name">7 significantes de la escena</div><div class="concepto-desc">Espacio, Tiempo, Luz, Sonido, Objeto, Palabra y Cuerpo: materiales que articulamos para dar sentido. Ninguno funciona aislado — forman sistema.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Espectador partícipe</div><div class="concepto-desc">Sujeto activo que conecta piezas y arma el rompecabezas del film por sí mismo, disfrutando lo que se dice sin decir.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Metáfora / Desplazamiento</div><div class="concepto-desc">La emoción dramática se traslada a un elemento para evitar la literalidad. El cierre de una puerta en El Padrino como metáfora de poder.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Fuera de campo</div><div class="concepto-desc">Espacio no visible donde ocurre lo más importante; genera tensión e inminencia. Lucrecia Martel como referencia.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Objeto metaforizador</div><div class="concepto-desc">Elemento material que gana capas de sentido en cada aparición, como los caireles azules de <em>Blue</em> o el piano de Campion.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Subtexto</div><div class="concepto-desc">Lo no dicho pero sugerido; lo que el personaje piensa pero no expresa. Variables anómalas: silencio, malentendido, diálogo de sordos.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Fisicidad / Physique du rôle</div><div class="concepto-desc">Los traumas y valores de cada época se inscriben en el cuerpo, en la postura y el tono muscular del personaje.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Sistema de signos integrados</div><div class="concepto-desc">La recurrencia y articulación de todos los significantes arma la estructura poética. Un elemento suelto no forma sistema.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Los siete significantes construyen la historia de orfandad sin enunciarla: el diario como objeto metaforizador, la luz gris de Vigo como emoción cromática, el silencio de las tías como subtexto, los cuerpos jóvenes de los actores como única forma de "ver" a los padres.</div>
+          <div class="peli-text">Los siete significantes construyen la orfandad sin enunciarla: el diario como objeto metaforizador, la luz gris de Vigo como emoción cromática, el silencio de las tías como subtexto y variable anómala, la casa flotante como espacio que es la identidad suspendida de Marina, y los cuerpos jóvenes de los actores como único modo de "ver" a los padres. Sacar cualquier elemento haría colapsar la película: Romería es un sistema.</div>
         </div>
       </div>
     </details>
@@ -313,19 +452,27 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Cuadernos-valija</div><div class="concepto-desc">Pequeños cuadernos donde el autor vuelca ideas, imágenes e intuiciones desordenadas: registro del proceso creativo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Arte de la digresión</div><div class="concepto-desc">Narración abierta que se alimenta de múltiples afluentes; lo evocado pesa más que lo mostrado objetivamente.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Cuadernos-valija / Chamuco cotidiano</div><div class="concepto-desc">Cuadernos donde se vuelcan ideas desordenadas, imágenes e intuiciones; recolección cotidiana que nutre la obra. El guion es un proceso de mutación constante.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Arte de la digresión</div><div class="concepto-desc">Narración abierta que se alimenta de múltiples afluentes; lo evocado pesa más que lo mostrado objetivamente. Se opone a la estructura cerrada de Hollywood.</div></div>
           <div class="concepto-card"><div class="concepto-name">Invención de la imagen</div><div class="concepto-desc">El cineasta crea una realidad nueva desde su mirada propia en lugar de reproducir mecánicamente lo real.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Imperialismo de la mirada</div><div class="concepto-desc">Hollywood estandariza gustos y estructuras, convirtiendo el cine en producto que anula identidades nacionales.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Tiburón metafórico</div><div class="concepto-desc">La sugerencia y la evocación son más eficaces que la reproducción literal: lo abierto a la imaginación llega más hondo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Imagen-tiempo nacional</div><div class="concepto-desc">Búsqueda cinematográfica que captura el tiempo y ritmos culturales propios, opuesta al montaje acelerado comercial.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Imperialismo de la mirada</div><div class="concepto-desc">Hollywood estandariza gustos y estructuras narrativas, convirtiendo el cine en producto de consumo que anula identidades nacionales.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Tiburón metafórico</div><div class="concepto-desc">La sugerencia y la evocación son más eficaces que la reproducción literal: lo abierto a la imaginación del espectador llega más hondo.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Imagen-tiempo nacional</div><div class="concepto-desc">Búsqueda cinematográfica que captura el tiempo y ritmos culturales propios, opuesta al montaje acelerado del cine comercial.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Dialéctica interior/exterior</div><div class="concepto-desc">La creación es observar el mundo exterior y retirarse al interior para procesar y gestar una forma nueva en el "capullo" del artista.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Improvisación y método</div><div class="concepto-desc">Solución metodológica propia que libera del saber "reglado" y renueva la obra constantemente durante el rodaje y el montaje.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón llega a Galicia con su "chamuco cotidiano" (cartas, fotos, testimonios). No muestra la muerte por SIDA — hay una carta leída en voz alta y un actor que mira el mar. Ese es el tiburón metafórico: la ausencia evocada más devastadora que cualquier escena literal.</div>
+          <div class="peli-text">Simón llega a Galicia con su chamuco cotidiano (cartas, fotos, testimonios contradictorios). El guion inicial es apenas un vestigio. No muestra la muerte por SIDA: hay una carta leída en voz alta y un actor que mira el mar — eso es el tiburón metafórico. Romería tiene el ritmo del duelo, no el de Hollywood: la cámara espera, los silencios duran. Esa duración no es un defecto formal: es la imagen-tiempo del duelo.</div>
         </div>
       </div>
     </details>
+  </div>
+
+  <!-- Síntesis Clase 2 -->
+  <div class="sintesis-block">
+    <div class="sintesis-badge">Síntesis Clase 2 — Los dos textos con Romería</div>
+    <div class="sintesis-text">González (T4) y Solanas (T5) convergen en que la forma no transporta el contenido: es el contenido. En Romería los siete significantes de González (luz gris, silencio, objeto-diario, cuerpo de los actores) y el procedimiento de Solanas (chamuco, digresión, tiburón metafórico) son la misma operación: Simón no muestra la orfandad ni la muerte — construye su energía con elementos mínimos. Cuando elige la luz fría de Vigo no está ambientando: esa temperatura es la distancia entre Marina y unos padres que nunca pudo conocer. Cuando las tías cambian de tema en lugar de responder, ese silencio es el secreto. La forma y el contenido son una sola cosa.</div>
   </div>
 </div>
 
@@ -343,16 +490,17 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Metáfora cognitiva</div><div class="concepto-desc">No es adorno literario: impregna el pensamiento y la acción. Entendemos un tipo de cosa en términos de otra.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Metáfora cognitiva</div><div class="concepto-desc">No es adorno literario: impregna el pensamiento y la acción. Entendemos y experimentamos un tipo de cosa en términos de otra.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Sistematicidad</div><div class="concepto-desc">Si "una discusión es una guerra", entonces atacamos, defendemos, ganamos — todo el sistema es coherente con la metáfora.</div></div>
           <div class="concepto-card"><div class="concepto-name">Destacar y ocultar</div><div class="concepto-desc">Toda metáfora ilumina ciertos aspectos y oscurece otros que no son coherentes con el marco elegido.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Metáforas orientacionales</div><div class="concepto-desc">Organizan conceptos según orientaciones espaciales (arriba/abajo) surgidas de la experiencia física y cultural.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Metáforas ontológicas</div><div class="concepto-desc">Tratan experiencias abstractas como si fueran objetos o entidades físicas para categorizarlas y razonar sobre ellas.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Metonimia</div><div class="concepto-desc">Usa una entidad para referirse a otra relacionada (parte por el todo, productor por producto, lugar por institución).</div></div>
-          <div class="concepto-card"><div class="concepto-name">Sistematicidad</div><div class="concepto-desc">Los conceptos metafóricos son coherentes entre sí: si "una discusión es una guerra", atacamos, defendemos, ganamos.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Metáforas orientacionales</div><div class="concepto-desc">Organizan conceptos según orientaciones espaciales (arriba/abajo, adelante/atrás) surgidas de nuestra experiencia física.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Metáforas ontológicas</div><div class="concepto-desc">Tratan experiencias abstractas como si fueran objetos o entidades físicas para poder categorizarlas y razonar sobre ellas.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Metonimia</div><div class="concepto-desc">Usa una entidad para referirse a otra relacionada (parte por el todo, productor por producto): función principalmente referencial.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Personificación</div><div class="concepto-desc">Metáfora ontológica que atribuye cualidades humanas a fenómenos no humanos para comprenderlos en términos de experiencias personales.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">El viaje a Galicia es la identidad (no la ilustra). El diario convierte la memoria en objeto tocable. Los actores son personificación radical: lo abstracto (padres desconocidos) adquiere cuerpo. Simón decide no mostrar la agonía — oculta lo literal para destacar lo emocional.</div>
+          <div class="peli-text">El viaje a Galicia es la identidad (no la ilustra): metáfora estructural, no decorativa. El diario convierte la memoria en objeto tocable (metáfora ontológica). Lo que Marina busca está siempre "abajo" o "adentro" — los cajones, el archivo, el sótano de la memoria — (metáfora orientacional). Los actores son personificación radical: lo abstracto (padres desconocidos) adquiere cuerpo y peso físico en pantalla.</div>
         </div>
       </div>
     </details>
@@ -368,16 +516,17 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">El detalle</div><div class="concepto-desc">Elemento que se corre de lo esperable y se rebela del paradigma causa-consecuencia; imán-imagen donde habita la emoción.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Observación en capas</div><div class="concepto-desc">La percepción no es lineal sino una pila de láminas transparentes superpuestas que se leen simultáneamente.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Emoción como lectura válida</div><div class="concepto-desc">Lenguaje único y universal para desencriptar imágenes sonoras; el dato informativo no produce emoción por sí solo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Vínculo ausente</div><div class="concepto-desc">El detalle genera una pregunta sobre una relación humana presentada en su ausencia, motor para comenzar a narrar.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Coleccionistas de imágenes</div><div class="concepto-desc">Práctica de observar el entorno para nutrir el pensamiento creativo; las historias nacen de imágenes, nunca al revés.</div></div>
+          <div class="concepto-card"><div class="concepto-name">El detalle</div><div class="concepto-desc">Elemento que se corre de lo esperable y se rebela del paradigma causa-consecuencia; imán-imagen donde habita la emoción del instante.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Observación en capas</div><div class="concepto-desc">La percepción no es lineal: funciona como láminas transparentes superpuestas que se leen simultáneamente.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Emoción como lectura universal</div><div class="concepto-desc">Único lenguaje válido para desencriptar imágenes; el dato informativo solo no produce emoción.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Vínculo ausente</div><div class="concepto-desc">El detalle genera una pregunta sobre una relación humana presentada en su ausencia — ahí nace la necesidad de una historia.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Coleccionistas de imágenes</div><div class="concepto-desc">Práctica creativa: las historias nacen siempre de imágenes concretas observadas, nunca de conceptos abstractos.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Corrimiento de sentido</div><div class="concepto-desc">Pequeña transgresión perceptiva que genera una pregunta y huye de la relación lógica de causa y consecuencia.</div></div>
           <div class="concepto-card"><div class="concepto-name">Energía de la realidad</div><div class="concepto-desc">Flujo vibratorio entre los cuerpos que el cine debe representar con elementos mínimos y selección técnica precisa.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">La película arranca de un detalle material — la caligrafía de una carta, una foto donde los padres son más jóvenes que Marina ahora. Simón encuadra esos objetos en primer plano y los sostiene más de lo necesario: ese exceso de duración es la pregunta de Bottero hecha imagen.</div>
+          <div class="peli-text">La película arranca de un detalle material: la caligrafía de una carta, una foto donde los padres son más jóvenes que Marina ahora. Simón encuadra esos objetos en primer plano y los sostiene más tiempo del necesario para informar — ese exceso de duración es la pregunta de Bottero hecha imagen: ¿dónde están estos vínculos? El montaje en capas simultáneas (presente + Super-8 sin jerarquía) replica la observación no lineal.</div>
         </div>
       </div>
     </details>
@@ -393,16 +542,17 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Tercera zona</div><div class="concepto-desc">Espacio de tránsito entre subjetividad y mundo objetivo (Winnicott) donde se instalan el juego, el arte y la cultura.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Tercera zona / Lugar potencial</div><div class="concepto-desc">Espacio de tránsito entre subjetividad y mundo objetivo (Winnicott) donde se instalan el juego, el arte y la cultura.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Frontera indómita</div><div class="concepto-desc">Territorio independiente y espeso de la especie, construido a fuerza de decantaciones; donde el sujeto se siente realmente vivo.</div></div>
           <div class="concepto-card"><div class="concepto-name">Pasaporte</div><div class="concepto-desc">Condiciones de ingreso (lugar, tiempo, ocasión) que permiten cruzar el umbral hacia el territorio del juego o el arte.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Autonomía del juego</div><div class="concepto-desc">El territorio imaginario tiene sus propias leyes, coherencias y responsabilidades; la obra manda, no la intención.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Tres fantasmas</div><div class="concepto-desc">Escolarización, frivolidad y mercado amenazan con domesticar y achicar la frontera indómita del lector/creador.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Cuerpo a cuerpo</div><div class="concepto-desc">La experiencia de la ficción es un encuentro físico y sensorial profundamente ligado a la materialidad y los rituales.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Extrañeza</div><div class="concepto-desc">Emoción que surge al entrar en territorios desconocidos donde los objetos se vuelven irreconocibles; condición del arte.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Autonomía del juego</div><div class="concepto-desc">El territorio imaginario tiene sus propias leyes; la obra manda, no la intención del artista ni la explicación exterior.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Tres fantasmas</div><div class="concepto-desc">Escolarización (utilidad), frivolidad (comodidad) y mercado (rédito) amenazan con domesticar la frontera indómita del creador.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Cuerpo a cuerpo</div><div class="concepto-desc">La experiencia de la ficción es un encuentro físico y sensorial profundamente ligado a la materialidad y los rituales compartidos.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Extrañeza</div><div class="concepto-desc">Emoción que surge al entrar en territorios desconocidos donde los objetos se vuelven irreconocibles; condición de entrada al arte.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">La película es ella misma una frontera indómita: ni subjetividad pura ni mundo exterior, resistente a ser domesticada por la explicación. Usar actores para encarnar a los padres es el juego más profundo: crear una realidad alternativa sobre la que trabajar lo que la realidad concreta no puede resolver.</div>
+          <div class="peli-text">La película es ella misma una frontera indómita: ni subjetividad pura ni mundo exterior, resistente a ser domesticada por la explicación. Usar actores para encarnar a los padres es el juego en su sentido más profundo (Winnicott + Pavlovsky): crear una realidad alternativa sobre la que trabajar lo que la realidad concreta no puede resolver. La cámara que llega tarde y se queda después construye la temporalidad propia del juego, irreductible al tiempo adulto.</div>
         </div>
       </div>
     </details>
@@ -418,16 +568,17 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Colonialidad del poder</div><div class="concepto-desc">Patrón de poder global que no se desarticuló con las independencias; opera sobre la explotación del trabajo y la subjetividad.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Colonialidad del poder</div><div class="concepto-desc">Patrón de poder global que no se desarticuló con las independencias; opera sobre la explotación del trabajo y la subjetividad (Quijano).</div></div>
           <div class="concepto-card"><div class="concepto-name">Racismo epistémico</div><div class="concepto-desc">Discriminación de los saberes de los pueblos colonizados, reduciéndolos a la irracionalidad frente al eurocentrismo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Heterogeneidad histórico-estructural</div><div class="concepto-desc">Coexistencia simultánea de diversas lógicas históricas en América Latina, sin resolución en una sola cronología.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Giro descolonial</div><div class="concepto-desc">Subversión epistémica y política: recuperación de pistas canceladas hacia una historia diferente; no nostalgia sino apertura.</div></div>
-          <div class="concepto-card"><div class="concepto-name">El regreso del futuro</div><div class="concepto-desc">Restauración de líneas históricas interceptadas; el pasado como sabiduría incorporada que defiende una racionalidad alternativa.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Bien vivir</div><div class="concepto-desc">Existencia social donde las relaciones humanas prevalecen sobre el lucro; disfuncional con las metas capitalistas.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Heterogeneidad histórico-estructural</div><div class="concepto-desc">En América Latina coexisten simultáneamente diversas lógicas históricas y temporalidades sin resolverse en una sola cronología.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Nudo arguediano</div><div class="concepto-desc">Entrelazamiento de múltiples historias y proyectos que conviven en América Latina y deben combinarse para producir un nuevo tiempo.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Giro descolonial</div><div class="concepto-desc">Subversión epistémica y política: recuperación de pistas canceladas hacia una historia diferente. No nostalgia, sino apertura.</div></div>
+          <div class="concepto-card"><div class="concepto-name">El regreso del futuro</div><div class="concepto-desc">El pasado no como nostalgia sino como sabiduría incorporada: líneas históricas interceptadas que se reactivan y vuelven a abrirse.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Bien vivir</div><div class="concepto-desc">Existencia donde las relaciones humanas y con la naturaleza prevalecen sobre el lucro; disfuncional con el proyecto capitalista.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">La historia de los padres de Marina fue cancelada por el estigma del SIDA y la heroína — colonialidad doméstica. Simón realiza un giro descolonial al recuperar esa memoria obstruida. El montaje heterogéneo (presente digital + Super-8 del pasado) practica sin nombrarlo la coexistencia de temporalidades que Quijano describe.</div>
+          <div class="peli-text">La historia de los padres de Marina fue cancelada por el estigma del SIDA y la heroína — colonialidad doméstica de la subjetividad. Simón realiza un giro descolonial al recuperar esa memoria obstruida, objetivando lo que fue impedido de objetivarse. El montaje (presente digital + Super-8 del pasado, sin jerarquía) practica sin nombrarlo la heterogeneidad histórico-estructural de Quijano. El final abierto no es nostalgia: es persistencia — regreso del futuro.</div>
         </div>
       </div>
     </details>
@@ -443,25 +594,33 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Mineralización del humano</div><div class="concepto-desc">Incapacidad inducida de sentir ante la devastación; la violencia colonial se convierte en habitus naturalizado.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Principio Potosí</div><div class="concepto-desc">Lógica generativa de la modernidad: aleación entre la tecnología de la guerra y la racionalidad de la acumulación.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Minga vs. Mita</div><div class="concepto-desc">Transición del trabajo como reciprocidad comunitaria (minga) al trabajo como explotación del cuerpo para acumulación (mita).</div></div>
-          <div class="concepto-card"><div class="concepto-name">Razón indolente</div><div class="concepto-desc">Racionalidad que justifica la opresión naturalizando desigualdades; el dolor de las víctimas se vuelve imperceptible.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Mineralización del humano</div><div class="concepto-desc">Incapacidad inducida de sentir ante la devastación; la violencia colonial se convierte en habitus naturalizado — la razón indolente.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Principio Potosí</div><div class="concepto-desc">Lógica generativa de la modernidad: aleación entre tecnología de la guerra y racionalidad de la acumulación de capital desde el siglo XVI.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Ego conqueror</div><div class="concepto-desc">Sujeto agencial moderno cuyo fin es la acumulación y cuyo medio es la violencia racionalizada; funda la línea abismal centro/periferia.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Minga vs. Mita</div><div class="concepto-desc">Transición del trabajo como reciprocidad comunitaria (minga) al trabajo como explotación del cuerpo para acumulación privada (mita).</div></div>
+          <div class="concepto-card"><div class="concepto-name">Razón indolente</div><div class="concepto-desc">Racionalidad que justifica la opresión naturalizando desigualdades; el dolor de las víctimas se vuelve imperceptible o "especulación".</div></div>
           <div class="concepto-card"><div class="concepto-name">Expropiación existencial</div><div class="concepto-desc">Fase extrema donde las víctimas dejan de ser personas con nombre para convertirse en "desaparecidos de la realidad".</div></div>
-          <div class="concepto-card"><div class="concepto-name">Epidermización</div><div class="concepto-desc">La dominación colonial se hace cuerpo, marcando la gestualidad y postura de colonizadores y colonizados (Fanon).</div></div>
+          <div class="concepto-card"><div class="concepto-name">Epidermización</div><div class="concepto-desc">La dominación colonial se hace cuerpo (Fanon): se inscribe en la gestualidad y postura de colonizadores y colonizados.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón filma el vínculo minga-tierra en su duración real (podar, caminar, comer juntos) sin romantizarlo. La cámara no extrae, no acelera, no rentabiliza el dolor — en sí misma es un acto contra la mineralización de la mirada.</div>
+          <div class="peli-text">Simón filma el vínculo minga-tierra en su duración real (podar, caminar, comer juntos) sin romantizarlo — un metabolismo todavía vivo. Los cuerpos que callan, dudan y firman papeles sin mirar construyen la textura de la subjetividad mineralizada: la violencia que no se siente como tal. La cámara no extrae, no acelera, no rentabiliza el dolor — en sí misma es un acto contra la mineralización de la mirada.</div>
         </div>
       </div>
     </details>
+  </div>
+
+  <!-- Síntesis Clase 3 -->
+  <div class="sintesis-block">
+    <div class="sintesis-badge">Síntesis Clase 3 — Los cuatro textos con Romería</div>
+    <div class="sintesis-text">Romería activa los cuatro marcos simultáneamente. Lakoff y Johnson (T6): el viaje es la identidad, no la ilustra; el diario materializa la memoria; los actores personifican la ausencia. Bottero (T7): la película parte de un detalle (la caligrafía de una carta) que activa la pregunta sobre un vínculo ausente, y la observación en capas simultáneas se convierte en la estructura misma del montaje. Montes (T8): la película es una frontera indómita donde los actores encarnan el juego en sentido profundo (Winnicott/Pavlovsky). Segato + Machado Araoz (T9 + T10): Simón realiza un giro descolonial al recuperar la memoria cancelada por el estigma del SIDA, y filma con una cámara que no extrae ni acelera — resistencia formal contra la mineralización de la mirada.</div>
   </div>
 </div>
 
 <!-- CLASE 4 -->
 <div class="clase-block c4">
   <div class="clase-header">Clase 4 — Cuerpo</div>
+
   <div class="texto-block">
     <details>
       <summary class="texto-header">
@@ -472,19 +631,26 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Holismo</div><div class="concepto-desc">Ideología medieval que prioriza la totalidad social sobre el individuo; el cuerpo es esencia amalgamada con la comunidad.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Cuerpo grotesco</div><div class="concepto-desc">Representación colectiva y abierta (Bajtín): sin límites claros con el mundo, desbordante, símbolo de la vida comunitaria.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Modelo dualista</div><div class="concepto-desc">Perspectiva moderna que disocia al hombre de su cuerpo, tratándolo como un objeto independiente o alter ego.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Holismo</div><div class="concepto-desc">Ideología medieval que prioriza la totalidad social; el cuerpo es esencia amalgamada con la comunidad, no propiedad privada.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Cuerpo grotesco</div><div class="concepto-desc">Representación colectiva y abierta (Bajtín): sin límites claros con el mundo, desbordante, símbolo de la vida comunitaria que renace.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Modelo dualista</div><div class="concepto-desc">Perspectiva moderna (Vesalio/Descartes) que disocia al hombre de su cuerpo, tratándolo como un objeto independiente o alter ego.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Borramiento ritualizado</div><div class="concepto-desc">El cuerpo moderno debe diluirse en la familiaridad de los signos, hacerse presente-ausente; marca de distinción entre individuos.</div></div>
           <div class="concepto-card"><div class="concepto-name">Sinistrosis</div><div class="concepto-desc">Patología donde el dolor físico sin base orgánica funciona como único medio de reconocimiento social para el sujeto excluido.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Inmigrante del tiempo</div><div class="concepto-desc">El hombre moderno (Mead) vive en precariedad de valores y sentidos; recurre al cuerpo como ancla existencial.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Borramiento ritualizado</div><div class="concepto-desc">El cuerpo moderno debe diluirse en la familiaridad de los signos, hacerse presente-ausente en el espacio social.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Inmigrante del tiempo</div><div class="concepto-desc">El hombre moderno (Mead) vive en precariedad constante de valores; recurre al cuerpo como ancla existencial de su identidad.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Señal de reconocimiento</div><div class="concepto-desc">Función del cuerpo moderno como soporte de signos que permiten al individuo identificarse en una sociedad atomizada.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón filma el cuerpo como condición del espacio, no como objeto aislado: nadie "tiene" un cuerpo en el film, todos son sus cuerpos en relación. El desorden físico colectivo de la fiesta construye el cuerpo grotesco de Bajtín sin nombrarlo.</div>
+          <div class="peli-text">Simón filma el cuerpo como condición del espacio, no como objeto aislado: nadie "tiene" un cuerpo en el film, todos son sus cuerpos en relación. El desorden físico colectivo de la fiesta (cuerpos que comen, duermen, se apoyan, se mezclan) construye el cuerpo grotesco de Bajtín sin nombrarlo. La niña: su cuerpo empieza a diferenciarse del grupo — Simón marca ese pasaje con planos subjetivos que solo le corresponden a ella mientras los adultos siguen filmados en conjunto.</div>
         </div>
       </div>
     </details>
+  </div>
+
+  <!-- Síntesis Clase 4 -->
+  <div class="sintesis-block">
+    <div class="sintesis-badge">Síntesis Clase 4 — El texto con Romería</div>
+    <div class="sintesis-text">Le Breton (T11) describe dos regímenes del cuerpo: el holismo medieval donde el cuerpo está amalgamado con la comunidad, y la modernidad que lo convierte en factor de individuación. Romería muestra ese pasaje en proceso: el cuerpo colectivo de la romería (grotesco, abierto, sin límites individuales) y el cuerpo de la niña que empieza a percibir el espacio desde sí misma. Simón no explica ese pasaje — lo construye formalmente con la decisión de cámara: encuadres conjuntos para los adultos, planos subjetivos para la niña. El texto habla de cuerpos; la película es un cuerpo colectivo que el espectador habita.</div>
   </div>
 </div>
 
@@ -503,15 +669,16 @@
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
           <div class="concepto-card"><div class="concepto-name">Continuidad narrativa germinal</div><div class="concepto-desc">El cine hereda y recrea "semillas inmortales" de la dramaturgia clásica, dotándolas de un lenguaje propio y contemporáneo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">MacGuffin</div><div class="concepto-desc">Pretexto argumental (Hitchcock) cuya naturaleza es irrelevante para el espectador pero indispensable para poner en marcha la acción.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Retorno al hogar (Odisea)</div><div class="concepto-desc">El viajero amnésico busca reconstruir su identidad mediante la memoria; tensión entre lo que era y lo que encontrará.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Mito del héroe</div><div class="concepto-desc">Estructura de pruebas, peripecias y tesoro que explora los límites de la resistencia humana y el viaje personal.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Laberinto kafkiano</div><div class="concepto-desc">Búsqueda fracasada de orientación en un engranaje social opaco que anula al individuo e impide el acceso al poder.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Semilla inmortal</div><div class="concepto-desc">No la historia que se repite, sino el modo en que cada obra la hace sentir nueva; originalidad como vuelta al origen.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Semilla inmortal</div><div class="concepto-desc">No la historia que se repite, sino el modo en que cada obra la hace sentir nueva; originalidad como vuelta al origen arcaico.</div></div>
+          <div class="concepto-card"><div class="concepto-name">MacGuffin (Hitchcock)</div><div class="concepto-desc">Pretexto argumental cuya naturaleza es irrelevante para el espectador pero indispensable para poner en marcha la acción.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Retorno al hogar (Odisea)</div><div class="concepto-desc">El viajero amnésico busca reconstruir su identidad mediante la memoria; tensión entre memoria y olvido, entre lo que era y lo que encontrará.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Mito del héroe / búsqueda del tesoro</div><div class="concepto-desc">Estructura de pruebas, peripecias y tesoro que explora los límites de la resistencia humana y el viaje personal.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Laberinto kafkiano / Ayuda de Ariadna</div><div class="concepto-desc">Búsqueda fracasada en un engranaje opaco. Ariadna: figura u objeto orientador que permite penetrar el abismo con garantía de retorno.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Intruso benefactor</div><div class="concepto-desc">Personaje que llega a una comunidad en crisis para violentar un orden caduco; puede leerse desde la perspectiva de quien ya estaba.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón encarna la figura del viajero amnésico que busca recuperar una identidad fragmentada. Las cartas y fotos son el MacGuffin: pretexto material para un itinerario espiritual. El hilo de Ariadna es el dispositivo cinematográfico mismo — usar actores para penetrar en el laberinto del pasado y poder salir de él.</div>
+          <div class="peli-text">Simón encarna la figura del viajero amnésico que busca recuperar una identidad fragmentada. Las cartas y fotos son el MacGuffin: pretexto material para un itinerario espiritual. El hilo de Ariadna es el dispositivo cinematográfico mismo — usar actores para penetrar en el laberinto del pasado y poder salir de él con identidad consolidada. La semilla no es el drama de la orfandad que se repite; es el modo en que Simón lo hace sentir absolutamente nuevo.</div>
         </div>
       </div>
     </details>
@@ -527,25 +694,33 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Motivo visual</div><div class="concepto-desc">Segmento significante que produce una suspensión contemplativa; el relato se detiene y el espectador es convocado a ver.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Motivo visual</div><div class="concepto-desc">Segmento significante que produce una suspensión contemplativa; el relato se detiene y el espectador es convocado a ver, no a seguir.</div></div>
           <div class="concepto-card"><div class="concepto-name">Sucesión kantiana</div><div class="concepto-desc">El creador bebe de la misma fuente que sus predecesores sin imitarlos; la tradición garantiza la originalidad.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Mujer en la ventana</div><div class="concepto-desc">Motivo que establece una mística de la mirada: el personaje se "abesima" mirando hacia un exterior fuera de campo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">La Piedad</div><div class="concepto-desc">Imagen de fertilidad cinematográfica que conecta con una memoria gestual ancestral; resumen de la tragedia colectiva.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Espejo e identidad</div><div class="concepto-desc">Dispositivo especular donde se constituye la conciencia del sujeto (Lacan); mirar al espejo = mirar a cámara en el cine moderno.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Pensamiento en marcha</div><div class="concepto-desc">(Godard) Los motivos no son meras repeticiones sino rastros de un pensamiento que cada obra hace nuevo.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Mujer en la ventana</div><div class="concepto-desc">Motivo que establece una mística de la mirada: el personaje "abeismado" mira hacia un exterior fuera de campo como frontera del deseo.</div></div>
+          <div class="concepto-card"><div class="concepto-name">La Piedad</div><div class="concepto-desc">Imagen de extraordinaria fertilidad cinematográfica que conecta con una memoria gestual ancestral; resumen de la tragedia colectiva.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Espejo e identidad</div><div class="concepto-desc">Dispositivo especular donde se constituye la conciencia del sujeto (Lacan); en el cine moderno: mirar al espejo = mirar a cámara.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Pensamiento en marcha</div><div class="concepto-desc">(Godard) Los motivos no son meras repeticiones sino rastros de un pensamiento que cada obra renueva; la forma es el argumento.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Paisaje como metáfora</div><div class="concepto-desc">El horizonte exige participación activa del espectador para resolver el sentido de la confrontación entre el ser humano y el entorno.</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón convierte el ritual de la romería en motivo visual: planos largos, cámara quieta, sin corte que lo clausure. La iconografía heredada de la procesión religiosa se despoja de solemnidad sacra mezclando lo litúrgico con lo mundano (risa, cansancio, conversación). La forma es el argumento.</div>
+          <div class="peli-text">Simón convierte el ritual de la romería en motivo visual: planos largos, cámara quieta o muy lenta, sin corte que lo clausure. La iconografía heredada de la procesión religiosa se despoja de solemnidad mezclando lo litúrgico con lo mundano (risa, cansancio, conversación) — la imagen hereda el motivo y al mismo tiempo lo desestabiliza, produciéndole una polisemia nueva. La forma es el argumento: eso es exactamente lo que Balló llama "pensamiento en marcha".</div>
         </div>
       </div>
     </details>
+  </div>
+
+  <!-- Síntesis Clase 5 -->
+  <div class="sintesis-block">
+    <div class="sintesis-badge">Síntesis Clase 5 — Los dos textos con Romería</div>
+    <div class="sintesis-text">Balló y Pérez (T12) proponen que la originalidad no es novedad sino vuelta al origen: el cine actualiza semillas inmortales de la dramaturgia clásica. Balló (T13) añade que los motivos visuales son "pensamiento en marcha": la forma no transporta el contenido, es el contenido. En Romería las dos operaciones son simultáneas: Simón actualiza el argumento del retorno al hogar (Odisea) sin nombrarlo — la película lo descubre en la duración de sus planos — y convierte el ritual de la romería en un motivo visual que suspende el tiempo narrativo para invitar a la contemplación. Las cartas y fotos son el MacGuffin (T12); el ritual colectivo es el motivo visual que sostiene el peso afectivo sin una sola línea explicativa (T13).</div>
   </div>
 </div>
 
 <!-- CLASE 6 -->
 <div class="clase-block c6">
   <div class="clase-header">Clase 6 — Amor Romántico</div>
+
   <div class="texto-block">
     <details>
       <summary class="texto-header">
@@ -556,25 +731,139 @@
       <div class="texto-body">
         <div class="section-label">Conceptos clave</div>
         <div class="conceptos-grid">
-          <div class="concepto-card"><div class="concepto-name">Capitalismo tardío y amor</div><div class="concepto-desc">El amor romántico no es solo refugio de autenticidad sino campo donde se manifiestan las contradicciones culturales del sistema.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Visualización</div><div class="concepto-desc">El cine y la publicidad colocaron la historia romántica en el centro de la cultura como espectáculo visual con halo de realismo.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Mapas cognitivos</div><div class="concepto-desc">Esquemas de comportamiento que los individuos extraen de las representaciones mediáticas y aplican a la vida real.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Liminalidad</div><div class="concepto-desc">Estado que suspende normas y jerarquías cotidianas, permitiendo una fusión intensa y transitoria; espacio del romance.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Distancia irónica</div><div class="concepto-desc">El sujeto posmoderno actúa bajo códigos del romance siendo consciente de su naturaleza fabricada y mediática.</div></div>
-          <div class="concepto-card"><div class="concepto-name">Aventura vs. comodidad</div><div class="concepto-desc">Las relaciones oscilan entre excitación (novedad, intensidad) y comodidad (estabilidad), condenadas a sacrificar una por la otra.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Capitalismo tardío y amor</div><div class="concepto-desc">El amor romántico no es solo refugio de autenticidad: es un campo colectivo donde se manifiestan las contradicciones culturales del sistema.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Visualización</div><div class="concepto-desc">El cine y la publicidad colocaron la historia romántica en el centro de la cultura como espectáculo visual con halo de realismo fotográfico.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Mapas cognitivos</div><div class="concepto-desc">Esquemas de comportamiento romántico que los individuos extraen de las representaciones mediáticas y aplican a la vida real.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Liminalidad</div><div class="concepto-desc">Estado que suspende normas y jerarquías cotidianas; espacio donde el afecto puede mostrarse sin mediación — viajes, rituales.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Distancia irónica</div><div class="concepto-desc">El sujeto posmoderno actúa bajo los códigos del romance siendo consciente de su naturaleza fabricada y mediática (Eco).</div></div>
+          <div class="concepto-card"><div class="concepto-name">Aventura vs. comodidad</div><div class="concepto-desc">Las relaciones oscilan entre excitación (novedad, intensidad) y comodidad (estabilidad); parecen condenadas a sacrificar una por la otra.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Intensidades</div><div class="concepto-desc">Episodios breves de afecto posmoderno (Jameson) sin profundidad temporal ni destino trágico; ocurren en espacios liminales.</div></div>
+          <div class="concepto-card"><div class="concepto-name">Simulacro</div><div class="concepto-desc">Las representaciones ficcionales del amor terminan por ser más reales o determinantes que las experiencias concretas (Madame Bovary).</div></div>
         </div>
         <div class="peli-section">
           <span class="peli-badge">Romería</span>
-          <div class="peli-text">Simón construye la utopía afectiva no en una pareja sino en un ritual comunitario. La romería es el espacio liminal por excelencia: ni origen ni destino, sino el camino. Filma lo extraordinario (el rito) con la textura de lo cotidiano — cámara en mano, luz natural — practicando la paradoja de Illouz: experiencia excepcional vivida con inmediatez de lo real.</div>
+          <div class="peli-text">Simón construye la utopía afectiva no en una pareja sino en un ritual comunitario. La romería es el espacio liminal por excelencia: ni origen ni destino, sino el camino; la cámara habita el umbral. Filma lo extraordinario (el rito) con la textura de lo cotidiano (cámara en mano, luz natural, sonido directo) — construye así la paradoja de Illouz: una experiencia excepcional vivida con la inmediatez de lo real. Los actores no profesionales y las situaciones sin resolución dramática clara: el afecto no se actúa, se transporta.</div>
         </div>
       </div>
     </details>
+  </div>
+
+  <!-- Síntesis Clase 6 -->
+  <div class="sintesis-block">
+    <div class="sintesis-badge">Síntesis Clase 6 — El texto con Romería</div>
+    <div class="sintesis-text">Illouz (T14) describe cómo el amor romántico se codifica en imágenes colectivas y rituales liminales bajo el capitalismo tardío. Romería construye cinematográficamente ese proceso sin nombrarlo: donde el texto describe sociológicamente la liminalidad (los momentos fuera de la rutina donde el afecto se vuelve posible), Simón crea formalmente ese estado haciendo que la cámara habite el umbral del ritual. El amor colectivo de la romería no es el romance de Hollywood: existe fuera del mercado y del tiempo productivo, sobreviviendo al capitalismo que lo intenta consumir. La decisión de filmar un rito con la textura de lo cotidiano es ya una posición sobre qué es el afecto y cómo persiste.</div>
+  </div>
+</div>
+
+<!-- CONEXIONES ENTRE TEXTOS -->
+<div class="conexiones-block">
+  <div class="conexiones-header">Conexiones entre autores — Ideas que se cruzan</div>
+
+  <div class="conexion-row">
+    <div class="conexion-tags">
+      <span class="ctag">González (T3)</span>
+      <span class="ctag">Lakoff / Johnson (T6)</span>
+    </div>
+    <div class="conexion-desc">Comparten la idea de que la <strong>metáfora no es adorno sino estructura</strong>. González dice que lo propio se desplaza hacia significantes del lenguaje (luz, espacio, montaje) — Lakoff y Johnson demuestran que vivimos en metáforas, que no hablamos de ellas sino dentro de ellas. En la práctica cinematográfica: las decisiones formales de Simón son metáforas estructurales, no decorativas.</div>
+  </div>
+
+  <div class="conexion-row">
+    <div class="conexion-tags">
+      <span class="ctag">Solanas (T5)</span>
+      <span class="ctag">Bottero (T7)</span>
+    </div>
+    <div class="conexion-desc">Ambos coinciden en que las <strong>historias nacen de imágenes concretas, nunca de conceptos abstractos</strong>. Solanas: la invención de la imagen como creación de una realidad nueva desde la mirada propia. Bottero: las historias nacen de imágenes observadas, no de ideas; el creador como coleccionista de imágenes. Los dos rechazan la originalidad como novedad absoluta.</div>
+  </div>
+
+  <div class="conexion-row">
+    <div class="conexion-tags">
+      <span class="ctag">Segato (T9)</span>
+      <span class="ctag">Machado Araoz (T10)</span>
+    </div>
+    <div class="conexion-desc">Dialogan sobre <strong>colonialidad</strong> desde ángulos complementarios: Segato/Quijano trabajan la colonialidad del poder como patrón epistémico que cancela memorias y subjetividades. Machado Araoz trabaja la colonialidad como expropiación material y mineralización del sentir. Juntos: lo que el sistema no deja narrar (Segato) y lo que el sistema convierte en invisible (Machado Araoz) son dos caras del mismo proceso.</div>
+  </div>
+
+  <div class="conexion-row">
+    <div class="conexion-tags">
+      <span class="ctag">González (T2)</span>
+      <span class="ctag">Montes (T8)</span>
+    </div>
+    <div class="conexion-desc">Ambas trabajan el <strong>juego y la infancia como espacio de resistencia</strong>. González: el juego (Winnicott) crea un espacio transicional donde se construyen realidades alternativas. Montes: el territorio imaginario del juego tiene autonomía propia y se opone a los tres fantasmas que lo domestican. Las dos coinciden en que el arte no es catarsis sino construcción: un espacio con sus propias leyes.</div>
+  </div>
+
+  <div class="conexion-row">
+    <div class="conexion-tags">
+      <span class="ctag">González T1+T3</span>
+      <span class="ctag">Solanas (T5)</span>
+      <span class="ctag">Balló (T13)</span>
+    </div>
+    <div class="conexion-desc">Los tres proponen que la <strong>forma es el contenido</strong>: González habla de inseparabilidad entre forma y contenido; Solanas habla de invención de la imagen como no-reproducción de lo real; Balló dice que los motivos visuales son "pensamiento en marcha" y que la forma es el argumento. En Romería esto se practica en cada decisión: la luz fría de Vigo no ambienta la orfandad — es la orfandad.</div>
+  </div>
+
+  <div class="conexion-row">
+    <div class="conexion-tags">
+      <span class="ctag">Balló/Pérez (T12)</span>
+      <span class="ctag">González (T3)</span>
+    </div>
+    <div class="conexion-desc">Las <strong>matrices culturales</strong> de González y las <strong>semillas inmortales</strong> de Balló y Pérez son el mismo fenómeno desde dos ángulos. González: las matrices son yacimientos de sentido heredados que transmigran entre épocas y medios. Balló y Pérez: el cine recrea argumentos clásicos dotándolos de un lenguaje contemporáneo. Los dos proponen que la originalidad no es novedad: es vuelta al origen.</div>
+  </div>
+
+  <div class="conexion-row">
+    <div class="conexion-tags">
+      <span class="ctag">Lakoff/Johnson (T6)</span>
+      <span class="ctag">González T4 (T4)</span>
+    </div>
+    <div class="conexion-desc">La <strong>metonimia</strong> en Lakoff y Johnson y el <strong>desplazamiento / objeto metaforizador</strong> en González son operaciones equivalentes. En los dos casos se trata de decir lo máximo con lo mínimo: usar una parte para que el espectador complete el todo, trasladar la emoción a un objeto para no nombrarla directamente. El piano de Campion y el diario de la madre en Romería funcionan por el mismo principio.</div>
+  </div>
+</div>
+
+<!-- POSTURA DE LA CÁTEDRA -->
+<div class="catedra-block">
+  <div class="catedra-header">Postura de la cátedra — Ejes transversales</div>
+  <div class="catedra-body">
+    <div class="catedra-grid">
+      <div class="catedra-item">
+        <div class="catedra-num">Eje 1</div>
+        <div class="catedra-name">El espectador como "completador"</div>
+        <div class="catedra-desc">El audiovisual se construye en fragmentos que el espectador completa con su propio imaginario. No es receptor pasivo sino "compañero de viaje" que debe extraviarse con el creador para que el sentido acontezca como experiencia vital.</div>
+      </div>
+      <div class="catedra-item">
+        <div class="catedra-num">Eje 2</div>
+        <div class="catedra-name">Sentido ≠ Significación</div>
+        <div class="catedra-desc">La significación es una referencia cerrada y conceptual. El Sentido es polisémico, mágico y abierto: involucra sensaciones, percepciones, emociones. Se vive como revelación que la sola razón no alcanza a explicar.</div>
+      </div>
+      <div class="catedra-item">
+        <div class="catedra-num">Eje 3</div>
+        <div class="catedra-name">Dimensión política: mirada histórica e ideológica</div>
+        <div class="catedra-desc">TEM no es una materia puramente técnica. El diseñador debe orientar su discurso con enfoque ideológico: descolonizar la mirada (evitar el imperialismo estético) e interrogar los fines de la vida mediante el "temblor de lo humano".</div>
+      </div>
+      <div class="catedra-item">
+        <div class="catedra-num">Eje 4</div>
+        <div class="catedra-name">La poética como algo incopiable</div>
+        <div class="catedra-desc">Podés copiar una estética (distribución de formas). No podés copiar una poética: nace de lo vivido, jugado y creído por el autor; organiza la metáfora y la metonimia desde adentro. Por eso es única e intransferible.</div>
+      </div>
+      <div class="catedra-item">
+        <div class="catedra-num">Eje 5</div>
+        <div class="catedra-name">La recuperación del "Entre"</div>
+        <div class="catedra-desc">Las ficciones propias no son autobiografía literal sino la recuperación del "entre": el aire entre cosas, personas y vínculos. Es en ese espacio donde habita la complejidad y donde lo propio se desplaza hacia la luz, el espacio y el montaje.</div>
+      </div>
+      <div class="catedra-item">
+        <div class="catedra-num">Eje 6</div>
+        <div class="catedra-name">Los 7 elementos: el alfabeto audiovisual</div>
+        <div class="catedra-desc">Espacio, Tiempo, Luz, Sonido, Objeto, Palabra y Cuerpo son las "letras del alfabeto" o los "colores primarios". No son recursos para ilustrar una historia: son un sistema integrado donde cada parte es el todo y el todo es la parte.</div>
+      </div>
+      <div class="catedra-item">
+        <div class="catedra-num">Eje 7</div>
+        <div class="catedra-name">Re-educar la mirada como "des-vivir"</div>
+        <div class="catedra-desc">La cátedra propone des-aprender las divisiones (mente/cuerpo, forma/contenido) impuestas por la educación tradicional. Ser creador exige volver al pensamiento perceptual y complejo de la infancia, donde esas separaciones no existían.</div>
+      </div>
+    </div>
   </div>
 </div>
 
 </main>
 
-<footer>TEM — Mapa conceptual generado con Claude · Romería (Carla Simón, 2022)</footer>
+<footer>TEM — Mapa conceptual · Romería (Carla Simón, 2022) · Todos los textos del programa</footer>
 
 </body>
 </html>
