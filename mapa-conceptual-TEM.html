@@ -276,6 +276,52 @@
     .catedra-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
 
     footer { text-align: center; font-size: 12px; color: var(--text3); padding: 2rem 0 1rem; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 600px) {
+      header {
+        padding: 1rem 1rem 0.85rem;
+        position: static;
+      }
+      header h1 { font-size: 16px; }
+      header p { font-size: 12px; }
+
+      main { padding: 1rem 0.6rem 3rem; }
+
+      .clase-header { font-size: 11px; padding: 0.6rem 1rem; }
+
+      .texto-header { padding: 0.65rem 1rem; font-size: 13px; }
+      .texto-author { display: none; }
+
+      .texto-body { padding: 0 1rem 1rem; }
+
+      .conceptos-grid {
+        grid-template-columns: 1fr;
+      }
+      .alas-grid {
+        grid-template-columns: 1fr;
+      }
+      .catedra-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Conexiones: apilar verticalmente */
+      .conexion-row {
+        flex-direction: column;
+        gap: 8px;
+        padding: 0.75rem 1rem;
+      }
+      .conexion-tags {
+        min-width: unset;
+        flex-wrap: wrap;
+      }
+
+      .sintesis-block { padding: 0.75rem 1rem; }
+      .catedra-body { padding: 0.75rem 1rem; }
+
+      .conexiones-header,
+      .catedra-header { padding: 0.6rem 1rem; font-size: 11px; }
+    }
   </style>
 </head>
 <body>
