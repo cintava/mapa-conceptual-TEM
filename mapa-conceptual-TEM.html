@@ -110,7 +110,16 @@
     }
     .texto-header:hover { background: var(--bg2); }
     .texto-title { flex: 1; }
-    .texto-author { font-size: 12px; font-weight: 400; color: var(--text2); white-space: nowrap; }
+    .texto-author {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text2);
+      white-space: nowrap;
+      background: var(--bg3);
+      border-radius: 4px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+    }
     .chevron { font-size: 10px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; }
     details[open] > .texto-header .chevron { transform: rotate(180deg); }
 
@@ -223,7 +232,7 @@
 
     /* ---- SÍNTESIS POR CLASE ---- */
     .sintesis-block {
-      background: #0d1611;
+      background: var(--accent-sint-bg);
       border: 0.5px solid rgba(0,0,0,0.08);
       border-top: none;
       border-radius: 0 0 var(--radius-lg) var(--radius-lg);
@@ -291,7 +300,7 @@
       .clase-header { font-size: 11px; padding: 0.6rem 1rem; }
 
       .texto-header { padding: 0.65rem 1rem; font-size: 13px; }
-      .texto-author { display: none; }
+      .texto-author { font-size: 10px; white-space: normal; text-align: right; max-width: 100px; }
 
       .texto-body { padding: 0 1rem 1rem; }
 
